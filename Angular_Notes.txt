@@ -1,0 +1,99 @@
+/*
+    - Angular 6 Notes:
+        - Intro:
+            - Angular Technologies:
+                - JavaScript / TypeScript
+                - Angular CLI
+                - Reactive programming, RxJS, Observables, operators
+                - Testing:
+                    - Jasmine, Karma
+                - Redux, ngRx
+            - Setting up Angular:
+                - install node.js // run time environment
+                    - Check the latest version of node:
+                        - node -v
+                    - Check the version of npm:
+                        - npm -v
+                - install Angular CLI:
+                   - npm install -g @angular/cli -g
+                   - Check the version of angular:
+                        - ng --version
+                   - Create angular app:
+                        - ng new app_name
+                   - Start Angular app:
+                        - ng serve
+            - File Structure:
+                - src: 
+                    - source code is held
+                    - File Directory:
+                        - app:
+                            - app.component.spec.ts // used for unit testing
+                        - assets:
+                        - environments:
+                        - favicon.ico 
+                        - index.hmtl
+                        - main.ts 
+                        - polyfills.ts 
+                        - styles.css
+                        - test.ts
+                        - tsconfig.app.json
+                        - tsconfig.spec.json
+                        - typing.d.ts 
+                - package.json
+                    - list of 3rd party Dependency/packages
+                - node_modules:
+                    - where Dependency, packages held
+                - e2e:
+                    End-to-End Testing
+            - These 3 Files Render the view:
+                - app-rout: 
+                    - Location:
+                        - app: These 3 files provides the functionality of the app
+                            - view:
+                                - src/app/app.component.hmtl
+                                - src/app/app component.css
+                            - backend logic:
+                                - src/app/app.component.ts
+                
+        - Components:
+            - HTML & JavaScript way:
+                - Example:  Get date and time
+                    - HTML is static
+                        - Add div and paragraph // for time and date
+                        - Add button // for button
+                    - JavaScript is dynamic
+                        - Code to get date / time  // for time and date
+                        - Get the paragraph DOM element // for time and date
+                        - Update value // for time and date
+                        - Code function to handle button click // for button
+            - Component Based Model Way of doing it:
+                - Create components from elements:
+                    - Like header, sidebar, footer, body, etc
+                    - Also it can have nested components inside of components:
+                        - main component with summary and details components inside it
+                    - Example: Creating a component for header 
+                        - Create an hmtl tag for it:
+                            - "tag represents the root of an HTML document"
+                            - Give it a name like header-selection
+                            - Then use it like this:
+                                <header-selection></header-selection>
+                        - First: Create Root Component
+                        - Second: Create component date and component click
+            - Create New Component:
+                - Use cli:
+                    - Create Component:
+                        - ng generate component componentName
+                    
+        - Templates:
+        - Data Binding:
+        - Event Handling:
+        - Services:
+        - Dependency Injection:
+        - REST API Calls:
+        - Routing:
+*/
+/*
+    - Notes For Project:
+        - First Create link:
+        - Then that link, links to page that displays 6 charts
+*/
