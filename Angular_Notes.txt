@@ -51,7 +51,7 @@
                         - app: These 3 files provides the functionality of the app
                             - view:
                                 - src/app/app.component.hmtl
-                                - src/app/app component.css
+                                - src/app/app.component.css
                             - backend logic:
                                 - src/app/app.component.ts
                 
@@ -83,6 +83,21 @@
                 - Use cli:
                     - Create Component:
                         - ng generate component componentName
+                    - Files It creates and updates:
+                        - creates:
+                            -  src/app/component-name/component-name.component.css
+                            -  src/app/component-name/component-name.component.html
+                            -  src/app/component-name/component-name.component.ts
+                            -  src/app/component-name/component-name.component.spec.ts
+                        - updates:
+                            - src/app/app.modules.ts
+                    - Use the component:
+                        - Find the selector tag found here:
+                            - src/app/component-name/component-name.component.ts
+                            - example:
+                                selector: 'app-turtle'
+                        - Create a tag from it and place it in the src/app/app.component.html, this creates an instance of component created
+                            <app-turtle></app-turtle>
                     
         - Templates:
         - Data Binding:
