@@ -10,6 +10,11 @@ import { Component, OnInit } from '@angular/core';
 // Must create a class, functionality will go in the class
 export class DateComponent implements OnInit {
 
+  // Create a variable called message:
+  message: string = "hello";
+
+  date_: string = new Date().toDateString(); // add date class and convert to a string
+
   constructor() { }
 
   ngOnInit(): void {

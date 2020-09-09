@@ -107,11 +107,24 @@
                             <app-date></app-date>
                     - Adding functioality getting the date: Work withdate.component.ts files
 
-                    
-                            
+        - Data Binding:
+            - Data binding in Angular refers to binding data in the component instance to the html template. Any changes to the data
+                automatically get updated in the view
+            - Automatic synchronization of data between the model and view components. Allows you to change values at run time. Dynamic
+            - Variables:
+                - html file
+                    - <!-- Reference typedscript code here: using {{ variableName }}-->
+                    <p>Checking on the date, {{ message }}</p>
+                - typedScript file:
+                    message: string = "Hello";
+            - Use date class:
+                - html file:
+                    <p>What is today's date: {{ date_ }}</p>
+                - typedScript file:
+                    date_: string = new Date().toDateString(); // add date class and convert to a string
+
 
         - Templates:
-        - Data Binding:
         - Event Handling:
         - Services:
         - Dependency Injection:
