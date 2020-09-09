@@ -136,7 +136,18 @@
                     - second argument is how often, so for every second 1000 as milliseconds 
 
         - Templates:
-            // left off here.............
+            - template interpolation:
+                - {{ ..... }} 
+                    - What you put that it will run, and give result
+                    - Example:
+                        1 + 1 = 2
+
+        - Looping with ngFor:
+            - <p *ngFor="let x of user.phone">{{x}}</p>
+        
+        - If statement ngIf:
+            
+
             
         - Event Handling:
         - Services:

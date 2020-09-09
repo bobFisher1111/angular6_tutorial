@@ -1,0 +1,10 @@
+<div>
+    <h1>{{user.name}}</h1>
+    <h3>{{user.title}}</h3>
+    <p>{{user.address}}</p>
+    <div>
+        <!-- Loop through array part, *ngFor-->
+        <p>Phone:</p>
+        <p *ngFor="let x of user.phone">{{x}}</p>
+    </div>
+</div>

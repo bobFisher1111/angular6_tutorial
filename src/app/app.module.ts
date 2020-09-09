@@ -6,14 +6,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TurtleComponent } from './turtle/turtle.component';
 import { DateComponent } from './date/date.component';
-import { GetExample1Component } from './get-example1/get-example1.component'; 
+import { GetExample1Component } from './get-example1/get-example1.component';
+import { AddressCardComponent } from './address-card/address-card.component'; 
 
 @NgModule({
   declarations: [
     AppComponent,
     TurtleComponent,
     DateComponent,
-    GetExample1Component // added this here manually
+    GetExample1Component,
+    AddressCardComponent 
   ],
   imports: [
     BrowserModule,
