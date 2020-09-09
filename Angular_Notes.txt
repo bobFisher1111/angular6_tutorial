@@ -146,7 +146,9 @@
             - <p *ngFor="let x of user.phone">{{x}}</p>
         
         - If statement ngIf:
-            
+            // loops through if phone less than 0, does not display phone
+            <div *ngIf="user.phone.lenght > 0">
+                <p *ngFor="let x of user.phone">{{x}}</p>
 
             
         - Event Handling:
