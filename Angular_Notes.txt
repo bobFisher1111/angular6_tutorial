@@ -150,7 +150,16 @@
             <div *ngIf="user.phone.lenght > 0">
                 <p *ngFor="let x of user.phone">{{x}}</p>
 
-            
+        - Passing inputs to components:
+            - Go to app.component.html
+                - use the selector to pass in data:
+                - example:
+                    <app-address-card></app-address-card>
+            - Go to address-card.component.ts:
+                - use annotation @Input()
+                    - create a variable and use annotation:
+                        @Input() userName: string; // this will hold the value being passed for function
+
         - Event Handling:
         - Services:
         - Dependency Injection:
