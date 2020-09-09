@@ -10,12 +10,20 @@ import { Component, OnInit } from '@angular/core';
 // Must create a class, functionality will go in the class
 export class DateComponent implements OnInit {
 
-  // Create a variable called message:
-  message: string = "hello";
+  dateMessage: string;
 
-  date_: string = new Date().toDateString(); // add date class and convert to a string
-
-  constructor() { }
+  /*
+    - setInterva()
+      - is JavaScript API lets you run a function at regular time intervals
+      - first agurment is the callback, method going to be used
+      - second argument is how often, so for every second 1000 as milliseconds 
+  */
+  constructor() {
+    setInterval(() => {
+      let currentDate = new Date();
+      this.dateMessage = currentDate.toDateString() + ' ' + currentDate.toLocaleTimeString();
+    }, 1000);
+   }
 
   ngOnInit(): void {
   }

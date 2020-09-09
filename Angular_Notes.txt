@@ -111,20 +111,29 @@
             - Data binding in Angular refers to binding data in the component instance to the html template. Any changes to the data
                 automatically get updated in the view
             - Automatic synchronization of data between the model and view components. Allows you to change values at run time. Dynamic
-            - Variables:
-                - html file
-                    - <!-- Reference typedscript code here: using {{ variableName }}-->
-                    <p>Checking on the date, {{ message }}</p>
-                - typedScript file:
-                    message: string = "Hello";
-            - Use date class:
-                - html file:
-                    <p>What is today's date: {{ date_ }}</p>
-                - typedScript file:
-                    date_: string = new Date().toDateString(); // add date class and convert to a string
-
+            - One-Way Binding:
+                - Variables:
+                    - html file
+                        - <!-- Reference typedscript code here: using {{ variableName }}-->
+                        <p>Checking on the date, {{ message }}</p>
+                    - typedScript file:
+                        message: string = "Hello";
+                - Use date class:
+                    - html file:
+                        <p>What is today's date: {{ date_ }}</p>
+                    - typedScript file:
+                        date_: string = new Date().toDateString(); // add date class and convert to a string
+            - Data Binding and Async:
+                - Example:
+                    - Every second call this value and set it to variable and call it
+                - setInterva()
+                    - is JavaScript API lets you run a function at regular time intervals
+                    - first agurment is the callback, method going to be used
+                    - second argument is how often, so for every second 1000 as milliseconds 
 
         - Templates:
+            // left off here.............
+            
         - Event Handling:
         - Services:
         - Dependency Injection:
