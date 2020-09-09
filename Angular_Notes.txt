@@ -54,6 +54,10 @@
                                 - src/app/app.component.css
                             - backend logic:
                                 - src/app/app.component.ts
+            - {{ ..... }} // Evaluation
+                - What you put that it will run, and give result
+                - Example:
+                    1 + 1 = 2
                 
         - Components:
             - Every Angular component is mainly a TypeScript class. Think of html and css files as just extra attachments,
