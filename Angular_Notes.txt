@@ -56,6 +56,8 @@
                                 - src/app/app.component.ts
                 
         - Components:
+            - Every Angular component is mainly a TypeScript class. Think of html and css files as just extra attachments,
+                to the main TypeScript file
             - HTML & JavaScript way:
                 - Example:  Get date and time
                     - HTML is static
@@ -98,7 +100,16 @@
                                 selector: 'app-turtle'
                         - Create a tag from it and place it in the src/app/app.component.html, this creates an instance of component created
                             <app-turtle></app-turtle>
+                - Example 1: Adding date to component created:
+                    - Create new component called date:
+                        - ng generate component date
+                    - Creating selector and placing in app.component.html to initialize it
+                            <app-date></app-date>
+                    - Adding functioality getting the date: Work withdate.component.ts files
+
                     
+                            
+
         - Templates:
         - Data Binding:
         - Event Handling:
