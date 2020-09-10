@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { User} from './user.model';
 
 @Component({
   selector: 'app-address-card',
@@ -7,13 +8,19 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class AddressCardComponent implements OnInit {
 
-  user: any;
+  // passing variable
+  //user: any;
   // this will hold the value that will be passed in from app.component.html, using @Input annotation
-  @Input('name') userName: string; // must specify in the Input property passing in from, decalring it with @Input
+  //@Input('name') userName: string; // must specify in the Input property passing in from, decalring it with @Input
+
+  // passing class: object
+  @Input('user') user: User;
 
   constructor() {}
 
-  ngOnInit(): void {
+  ngOnInit() {
+    /*
+    // this is for the variable passing, not for object passing
     this.user = {
       name: this.userName,
       title: 'Fisherman',
@@ -22,8 +29,9 @@ export class AddressCardComponent implements OnInit {
       phone: [
         '972-355-8645',
         '111-111-1111'
-      ]
+     ]
     };
+    { */
   }
 
 }

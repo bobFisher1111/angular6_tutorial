@@ -1,6 +1,8 @@
 <div>
     <h1>{{user.name}}</h1>
-    <h3>{{user.title}}</h3>
+    <!-- for variable, but can update later no longer title but to designation-->
+    <!--<h3>{{user.title}}</h3> -->
+    <h3>{{user.designation}}</h3>
     <p>{{user.address}}</p>
     <!-- If phone numbers less than 0, do not display phone -->
     <div *ngIf="user.phone.length > 0">

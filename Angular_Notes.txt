@@ -170,8 +170,29 @@
                 - Initialize the directive or component after Angular first displays the data-bound properties and sets the directive or component's input properties
 
         - Passing Member Variables to Components:
-            // left off on video 15
+            - Passing in an object to the component:
+                - 1st: create a class that defines what object should be in typedscript
+                    - create new file:
+                        user.model.ts // name of class is user, give it a .module because class in angular supposed to be modules
+                - 2nd:
+                    - make changes to address.component.ts file
+                - 3rd: 
+                    - Go to app.component.ts
+                        - create an instance in the constructor, maybe have to make the constructor, hard coding the values for now
+                        - Also import it here
+                            import { User } from './address-card/user.model.ts
+                            user: User; // make this global
+                            constructor(){
+                                this.user: User = new User();
+                            }
+                - 4th:
+                    - go to app.component.html  
+                        // putting [] not to put a variable but to look for global variable and pass it, if done without square backets will just pass it as 
+                            a variable
+                        - <app-address-card [name] = "user"></app-address-card>
 
+        - Styling Angular Components:
+            
         - Event Handling:
         - Services:
         - Dependency Injection:
