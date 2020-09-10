@@ -20,4 +20,7 @@ export class AppComponent {
       '111-222-3333'
     ];
   }
+
+  // Calling the service printToConsole() with dependency injection
+  
 }

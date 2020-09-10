@@ -1,5 +1,8 @@
 /*
     - Angular 6 Notes:
+        - Need to go back over:
+            - The view:
+        
         - Intro:
             - Angular Technologies:
                 - JavaScript / TypeScript
@@ -70,6 +73,19 @@
                         HttpClientModule,
                         ViewModuleModule
                     ],
+
+            - Annoations:
+                - @Component --> Angular Component
+                - @NgModule --> Angular Module
+                - @Injectable --> Angular Service
+
+            - @NgModule:
+                - declareations:
+                    - contain all the component in module
+                - imports:
+                    - contain all the other modules this module depends on
+                - providers:
+                    - contain all the services in module
      
         - Components:
             - Every Angular component is mainly a TypeScript class. Think of html and css files as just extra attachments,
@@ -258,7 +274,27 @@
                         })
                     
         - Creating a service:
-            // Left off at video 20
+            - Methods & class that can work across multiple components
+            - How to create a service:
+                - ng generate service serviceName
+                - it will populate in the app directory
+            - How it works:
+                - Inside service.ts file, this annotation tells angular its a service"
+                    @Injectable
+                - Declare it inside the module you want to import it to
+                    - Put it inide the providers, providers hold all the services for module
+                        @NgModule({
+                            providers: [
+                                ServiceOneService
+                            ]
+                        })
+                    - Also Import it at the top for typedScript
+                        import { ServiceOneService } from './service-one.service';
+            - Use Service:
+                - By using Dependency Injection
+                // left off here video 21
+
+
                 
 
 */

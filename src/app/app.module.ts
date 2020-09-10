@@ -9,6 +9,7 @@ import { DateComponent } from './date/date.component';
 import { GetExample1Component } from './get-example1/get-example1.component';
 import { AddressCardComponent } from './address-card/address-card.component'; 
 import { ViewModuleModule } from './view-module/view-module.module';
+import { ServiceOneService } from './service-one.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,9 @@ import { ViewModuleModule } from './view-module/view-module.module';
     HttpClientModule,
     ViewModuleModule
   ],
-  providers: [],
+  providers: [
+    ServiceOneService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
