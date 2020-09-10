@@ -58,7 +58,19 @@
                 - What you put that it will run, and give result
                 - Example:
                     1 + 1 = 2
-                
+
+            - 2 Types of imports:
+                - Both are required!
+                - typedScript import:
+                    import { ViewModuleModule } from './view-module/view-module.module';
+                - angular import:
+                    imports: [
+                        BrowserModule,
+                        AppRoutingModule,
+                        HttpClientModule,
+                        ViewModuleModule
+                    ],
+     
         - Components:
             - Every Angular component is mainly a TypeScript class. Think of html and css files as just extra attachments,
                 to the main TypeScript file
@@ -212,7 +224,43 @@
             - Add a button html 
                 - Make the browser ignore it and used for angular, add () around it
             - Or make it where instead expand and collapse togther, make it click expand then click to collapse
+
+        - Using Multiple Modules: Create module with nested component 
+            - app.module info:
+                - The modules declarations like: "AddressCardComponent", is apart of the export class AppModule { } 
+            - When building components, make them for a feature. Dont just create one with everything focus on a topic, that way it can be reused
+            - Create a module:
+                - ng generate module moduleName
+                - Will only contain module.ts files
+                    - no declarations just 1 import called CommonModule
+            - Create a component inside of the module just created:
+                - ng generate component directory_where_module_created/moduleName-component
+                    - example:
+                        ng generate component view-module/view-module-component
+            - Import module created with its components into the app root module: "app.mdoule.ts":
+                - Inside app.module.ts
+                    - add this at top
+                        - import { ViewModuleModule } from './view-module/view-module.module';
+                    - add this to:
+                        @NgModule({
+                            .......
+                            imports:[
+                                ....,
+                                ViewModuleModule 
+                            ]
+                        })
+                - inside the view-module.module.ts:
+                    - add this: exports to @NgModule
+                        @NgModule({
+                            .......
+                            imports:[],
+                            exports: [ViewModuleComponentComponent]
+                        })
+                    
+        - Creating a service:
+            // Left off at video 20
                 
+
 */
 /*
     - Notes For Project:

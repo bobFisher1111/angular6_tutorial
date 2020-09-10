@@ -8,6 +8,7 @@ import { TurtleComponent } from './turtle/turtle.component';
 import { DateComponent } from './date/date.component';
 import { GetExample1Component } from './get-example1/get-example1.component';
 import { AddressCardComponent } from './address-card/address-card.component'; 
+import { ViewModuleModule } from './view-module/view-module.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AddressCardComponent } from './address-card/address-card.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ViewModuleModule
   ],
   providers: [],
   bootstrap: [AppComponent]
