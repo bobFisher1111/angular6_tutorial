@@ -3,11 +3,16 @@
     <!-- for variable, but can update later no longer title but to designation-->
     <!--<h3>{{user.title}}</h3> -->
     <h3 class="title">{{user.designation}}</h3>
-    <p class="address">{{user.address}}</p>
-    <!-- If phone numbers less than 0, do not display phone -->
-    <div class="phone" *ngIf="user.phone.length > 0">
-        <!-- Loop through array part, *ngFor-->
-        <p>Phone:</p>
-        <p *ngFor="let x of user.phone">{{x}}</p>
-    </div>
+    <!-- This is where make collapse -->
+    <button *ngIf="isColapsed" (click)="toggleCollapse()">Expand</button>
+    <button *ngIf="!isColapsed" (click)="toggleCollapse()">Collapse</button>
+    <div *ngIf="!isColapsed">
+        <p class="address">{{user.address}}</p>
+        <!-- If phone numbers less than 0, do not display phone -->
+        <div class="phone" *ngIf="user.phone.length > 0">
+            <!-- Loop through array part, *ngFor-->
+            <p>Phone:</p>
+            <p *ngFor="let x of user.phone">{{x}}</p>
+        </div>
+    </div>  
 </div>

@@ -7,16 +7,26 @@ import { User} from './user.model';
   styleUrls: ['./address-card.component.css']
 })
 export class AddressCardComponent implements OnInit {
-
-  // passing variable
+  /*
+    -  passing variable:
+  */
   //user: any;
   // this will hold the value that will be passed in from app.component.html, using @Input annotation
   //@Input('name') userName: string; // must specify in the Input property passing in from, decalring it with @Input
 
   // passing class: object
   @Input('user') user: User;
+   // Used for click events:
+   isColapsed : boolean = true; // set for true to start off as collapsed
+
+    // Create a function for the button for click event
+ 
 
   constructor() {}
+  
+  toggleCollapse(){
+    this.isColapsed = !this.isColapsed;
+  }
 
   ngOnInit() {
     /*

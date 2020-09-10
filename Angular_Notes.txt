@@ -198,6 +198,21 @@
             - Styling Globally
                 - When wanting to style something across the entire use styles.css found in the root of src directory
 
+        - Handling Click Events:
+            - In the app-card.component.ts add this to the class:
+                // Used for click events:
+                isColapsed : boolean = true;
+                // below constructor, create a function // reason maybe for best practice. Not really sure
+                togleCollapse(){
+                    this.isColapsed = !this.isColapsed;
+                 }
+            - In the address-card.component.html
+                - create a new div on what you want to collapse
+                <div *ngIf="!isColapsed">....</div>
+            - Add a button html 
+                - Make the browser ignore it and used for angular, add () around it
+            - Or make it where instead expand and collapse togther, make it click expand then click to collapse
+                
 */
 /*
     - Notes For Project:
