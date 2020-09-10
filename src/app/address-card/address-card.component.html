@@ -1,11 +1,11 @@
-<div>
-    <h1>{{user.name}}</h1>
+<div class="address-card">
+    <h1 class="name">{{user.name}}</h1>
     <!-- for variable, but can update later no longer title but to designation-->
     <!--<h3>{{user.title}}</h3> -->
-    <h3>{{user.designation}}</h3>
-    <p>{{user.address}}</p>
+    <h3 class="title">{{user.designation}}</h3>
+    <p class="address">{{user.address}}</p>
     <!-- If phone numbers less than 0, do not display phone -->
-    <div *ngIf="user.phone.length > 0">
+    <div class="phone" *ngIf="user.phone.length > 0">
         <!-- Loop through array part, *ngFor-->
         <p>Phone:</p>
         <p *ngFor="let x of user.phone">{{x}}</p>

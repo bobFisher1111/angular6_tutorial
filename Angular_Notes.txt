@@ -192,12 +192,12 @@
                         - <app-address-card [name] = "user"></app-address-card>
 
         - Styling Angular Components:
-            
-        - Event Handling:
-        - Services:
-        - Dependency Injection:
-        - REST API Calls:
-        - Routing:
+            - Styling locally:
+                - When stying with angular components, you don't have to worry about the .css file inside the component your working effect stuff outside
+                    the component when comes to styling. Only style happens is to stuff inside that component. 
+            - Styling Globally
+                - When wanting to style something across the entire use styles.css found in the root of src directory
+
 */
 /*
     - Notes For Project:
