@@ -160,6 +160,18 @@
                     - create a variable and use annotation:
                         @Input() userName: string; // this will hold the value being passed for function
 
+        - ngOnInit lifecycle hook:
+            - doc:
+                https://angular.io/guide/lifecycle-hooks
+            - Lifecycle of an angular component:
+                - if trying to pass code in the construct, it will not have time to populate the data before being used and will hold empty values.
+                - When you want something to happen after initialize, then use a hook
+            - ngOnInit:
+                - Initialize the directive or component after Angular first displays the data-bound properties and sets the directive or component's input properties
+
+        - Passing Member Variables to Components:
+            // left off on video 15
+
         - Event Handling:
         - Services:
         - Dependency Injection:
