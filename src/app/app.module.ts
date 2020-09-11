@@ -9,7 +9,7 @@ import { DateComponent } from './date/date.component';
 import { GetExample1Component } from './get-example1/get-example1.component';
 import { AddressCardComponent } from './address-card/address-card.component'; 
 import { ViewModuleModule } from './view-module/view-module.module';
-import { ServiceOneService } from './service-one.service';
+import { ServiceOneService } from './service-one.service'; // added this by when addeding SericeOneService to provdiers asked to import it, if not add it then
 
 @NgModule({
   declarations: [
@@ -26,7 +26,7 @@ import { ServiceOneService } from './service-one.service';
     ViewModuleModule
   ],
   providers: [
-    ServiceOneService
+    ServiceOneService // added this manually, its a service
   ],
   bootstrap: [AppComponent]
 })

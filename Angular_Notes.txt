@@ -86,6 +86,29 @@
                     - contain all the other modules this module depends on
                 - providers:
                     - contain all the services in module
+
+            - component life-cycle method groups:
+                - ngOnInit:
+                    - Called once, after the first ngOnChanges()
+                - ngOnChanges:
+                    - Called before ngOnInit() and whenever one of input properties change
+                - ngOnDestroy:
+                    - Called just before Anugular destroys the directive/component
+                - ngDoCheck:
+                    - Called during every change detection run
+                - ngAfterContentChecked:
+                    - Called after the ngAfterContentInit and every subsequent ngDoCheck()
+                - ngAFterViewChecked:
+                    - Called after the ngAfterViewInit() and every subsequent ngAfterContentCheck()
+                - ngAfterContentInit:
+                    - Called once after the first ngDoCheck()
+                - ngAfterViewInit:
+                    - Called once after the first ngAfterContentChecked()
+                - constructor:
+                    - Will be executed before any life-style function
+            
+            - Shared Space:
+                - app.component.ts & app.module.ts etc. are shared space for the inner modules and compoents
      
         - Components:
             - Every Angular component is mainly a TypeScript class. Think of html and css files as just extra attachments,
@@ -291,8 +314,39 @@
                     - Also Import it at the top for typedScript
                         import { ServiceOneService } from './service-one.service';
             - Use Service:
-                - By using Dependency Injection
-                // left off here video 21
+                - Calling function / method: One instance:
+                    - let svc = new ServiceOneService(); // create an instance 
+                      svc.printToConsole // call the method
+                - By using Dependency Injection (Better Way than just calling for one instance)
+                    - tell framework needs a specific service, framework, runtime controls handles objects and injects them into the code,
+                        tells angular needs an instance of service itself
+                    - Great way to create utility methods of service to across components
+                    -  create an argument to the constructor of that type
+                        - Example:
+                            // So when need an instance it passes it to svc and gives it to us
+                            constructor(svc: ServiceOneService){
+                            }
+                        - Example 2: save it as a member variable:
+                            - Long Way: Same Results
+                                private svc: ServiceOneService; // member variable
+
+                                constructor(svc: ServiceOneService){
+                                    this.svc = svc;
+                                }
+                            - Better Way: Same Results, this allows to reference to member variable instead of the argument
+                                 this.constructor(private svc: ServiceOneService){
+                                }
+                - Service Injection Context: // do it in the app.component so that way its shared across components/modules
+                    - In order to use Components outside of modules:
+                        - 1. Module needs to export it
+                        - 2. Module wanting to use it needs to import it
+                    - Services work a little different:
+                        - Lets say you have app.module, service.ts in the app root directory. But want to use that service in the   
+                            inner module. You dont have to do anything to the inner module. Just import it in the iner compontent.ts    
+                            and it will work because the inner module is connected to the app.component and its already there.
+
+            - Making REST Calls with HttpClient:
+
 
 
                 

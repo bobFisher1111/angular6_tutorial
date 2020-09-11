@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { User } from './address-card/user.model';
+import { ServiceOneService } from './service-one.service';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,9 @@ import { User } from './address-card/user.model';
 export class AppComponent {
   title = 'Turtle Page';
   user: User;
-  constructor(){
+
+   // So when need an instance it passes it to svc and gives it to us
+  constructor(private svc: ServiceOneService){
     // Hard coded values:
     this.user = new User();
     this.user.name =  "Turtle Warrior";
@@ -19,8 +22,8 @@ export class AppComponent {
       '972-355-8645',
       '111-222-3333'
     ];
-  }
 
-  // Calling the service printToConsole() with dependency injection
-  
+    // use instance
+    this.svc.printToConsole("Got The Service!!!!!!!!!!"); // check and see it in the console in the inspect on web browser 
+  }
 }
