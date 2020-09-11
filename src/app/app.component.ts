@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { User } from './address-card/user.model';
 import { ServiceOneService } from './service-one.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,7 @@ export class AppComponent {
   user: User;
 
    // So when need an instance it passes it to svc and gives it to us
-  constructor(private svc: ServiceOneService){
+  constructor(private svc: ServiceOneService, private http: HttpClient){
     // Hard coded values:
     this.user = new User();
     this.user.name =  "Turtle Warrior";
@@ -25,5 +26,14 @@ export class AppComponent {
 
     // use instance
     this.svc.printToConsole("Got The Service!!!!!!!!!!"); // check and see it in the console in the inspect on web browser 
+  }
+
+  // Using REST with HttpClient
+  ngOnInit(){
+    // create a variable called obs for obseravble 
+    let obs = this.http.get('http://api.github.com/users/koushikkothagal')
+    // calling method on it called susbscribe and print to console.log
+    // then pass what it got to variable called response inside subscribe
+    obs.subscribe((response) => console.log(response)); // prints json in the console
   }
 }

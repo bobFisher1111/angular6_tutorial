@@ -1,5 +1,7 @@
 /*
     - Angular 6 Notes:
+        - Tutorial for Angular Covered here plus other notes on the way:
+            https://www.youtube.com/watch?v=3ZkGUI6KNHY&list=PLqq-6Pq4lTTb7JGBTogaJ8bm7f8VCvFkj&index=23
         - Need to go back over:
             - The view:
         
@@ -346,6 +348,27 @@
                             and it will work because the inner module is connected to the app.component and its already there.
 
             - Making REST Calls with HttpClient:
+                - Import module in the root module: "app.module.ts", that way it's used everywhere, commonly shared modules, best practice
+                - Notes:
+                    The endpoint URL.
+                        Constructs a GET request that interprets the body as a JSON object and returns the response body as a JSON object.
+                        @return — An Observable of the response body as a JSON 
+                - Using it in app.component.ts:
+                    - import it at the top:
+                        import { HttpClient } from '@angular/common/http';
+                    - add it to the constructor: with member variable as private
+                         constructor(private http: HttpClient){
+                         }
+                    - Use it the ngOnInit(), if not there then correct it:
+                        - ngOnInit(){
+                            this.http.get('URL')
+                        }
+            - Creating in the view component that I created a functionality where user searches for a name on git hub and 
+                there is a button and it prints out the json response
+                - Example found in the restful-get component
+                    - instead of using div *ngIf to not cause an issue another alternative is " ?"
+                        {{response ?.login }} // shortcut, but for this example ngIf better because we dont want to see all the varbiables
+                            that will still be there using shortcut
 
 
 

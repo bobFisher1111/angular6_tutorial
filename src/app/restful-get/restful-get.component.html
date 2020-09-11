@@ -1,6 +1,8 @@
-<!-- Used for seraching git hub for user and then return response in json form and display it -->
-<br>
 <!-- Bind member variable to the component use ngModel and call it userName-->
+<br>
+<hr>
+<br>
+<h1>Get Github User Info:</h1>
 User name: <input type="text" [(ngModel)]="userName">
 <button (click)="search()">Search</button><!--= Bind button to function -->
 <!-- Display the response, add ngIf so that when loading its not looking for repsonse and giving an error before user can add info in a div -->
@@ -10,4 +12,3 @@ User name: <input type="text" [(ngModel)]="userName">
     <p>Number of gists: {{response.public_gists}}</p>
     <p>Number of followers: {{response.followers}}</p>
 </div>
-

@@ -1,21 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import { ServiceOneService } from 'src/app/service-one.service';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-view-module-component',
-  templateUrl: './view-module-component.component.html',
-  styleUrls: ['./view-module-component.component.css']
+  selector: 'app-restful-get',
+  templateUrl: './restful-get.component.html',
+  styleUrls: ['./restful-get.component.css']
 })
-export class ViewModuleComponentComponent implements OnInit {
+export class RestfulGetComponent implements OnInit {
 
   // declare userName as a string
   userName: string = "";
   // create a member variable that will hold the response in the search()
   response: any;
 
-  constructor(private svc: ServiceOneService, private http: HttpClient) { 
-    svc.printToConsole("Welcome to the inner Service"); // printing to the inspect console on the browser
+  constructor(private http: HttpClient) { 
   }
   
   ngOnInit(): void {
