@@ -4,6 +4,8 @@
             https://www.youtube.com/watch?v=3ZkGUI6KNHY&list=PLqq-6Pq4lTTb7JGBTogaJ8bm7f8VCvFkj&index=23
         - Need to go back over:
             - The view:
+            - deploying production with ng build, creates dist and had issues with it working with http-server dist/project-one,
+                - http-server is npm package
         
         - Intro:
             - Angular Technologies:
@@ -26,7 +28,19 @@
                    - Create angular app:
                         - ng new app_name
                    - Start Angular app:
-                        - ng serve
+                        - ng serve // only used or development, not in production
+            - When deploying Application:
+                - You dont want to use ng serve, only used for development
+                - You want to compress it down to html,css,javascript in one folder production By  
+                    - 1st Create dist folder to hold html, css, javaScript:
+                        - ng build
+                        - for production
+                            - ng build --prod
+                    - 2nd install npm module called http-server:
+                        - npm install http-server -g
+                    - run it with location:
+                        - http-server dist/projectNAme
+
             - File Structure:
                 - src: 
                     - source code is held
@@ -363,13 +377,16 @@
                         - ngOnInit(){
                             this.http.get('URL')
                         }
+
             - Creating in the view component that I created a functionality where user searches for a name on git hub and 
                 there is a button and it prints out the json response
                 - Example found in the restful-get component
                     - instead of using div *ngIf to not cause an issue another alternative is " ?"
                         {{response ?.login }} // shortcut, but for this example ngIf better because we dont want to see all the varbiables
                             that will still be there using shortcut
-
+            
+            - Building Angular Application:
+                // 
 
 
                 
