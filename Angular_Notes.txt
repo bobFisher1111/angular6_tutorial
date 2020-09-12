@@ -29,17 +29,18 @@
                         - ng new app_name
                    - Start Angular app:
                         - ng serve // only used or development, not in production
-            - When deploying Application:
-                - You dont want to use ng serve, only used for development
-                - You want to compress it down to html,css,javascript in one folder production By  
-                    - 1st Create dist folder to hold html, css, javaScript:
-                        - ng build
-                        - for production
-                            - ng build --prod
-                    - 2nd install npm module called http-server:
-                        - npm install http-server -g
-                    - run it with location:
-                        - http-server dist/projectNAme
+            - Building Angular Application:
+                - When deploying Application:
+                    - You dont want to use ng serve, only used for development
+                    - You want to compress it down to html,css,javascript in one folder production By  
+                        - 1st Create dist folder to hold html, css, javaScript:
+                            - ng build
+                            - for production
+                                - ng build --prod
+                        - 2nd install npm module called http-server:
+                            - npm install http-server -g
+                        - run it with location:
+                            - http-server dist/projectNAme
 
             - File Structure:
                 - src: 
@@ -385,15 +386,103 @@
                         {{response ?.login }} // shortcut, but for this example ngIf better because we dont want to see all the varbiables
                             that will still be there using shortcut
             
-            - Building Angular Application:
-                // 
+            - Angular Routing:
+                - Single Page:
+                    - It allows click on something allows without a full page refresh, switches between views
+                - The switch between views called Routes:
+                - Routing Concepts:
+                    - URL based routing:
+                        - navigation controlled by url routing:
+                            - example:
+                                - html tells which view to go to
+                                    - foo.com/view1 
+                                    - or 
+                                    - foo.com/view2
+                    - Component Based Routing:
+                        - Each view controlled by it's own component: One component per view
+                        - Make one root component per view, and each component has its own tree
+                - Combine both url based routing with component based routing, thats how angular routing works:
+                    - Map it like this:
+                        - Views:                 Urls:                Components:
+                         - view 1             foo.com/view1            Component 1
+                         - view 2             foo.com/view2            Component 2
+                         - view 3             foo.com/view3            Component 3
+                - Create Multi View Angular Application:
+                    - 1st: 
+                        - Define your route URLs 
+                    - 2nd:
+                        - Create Angular Components for each view (one fore each route)
+                    - 3rd:
+                        - Configure Anguarl to map route URLs to components 
+            
+            - Create An Angular Project With Routing:
+                - When creating angular application and if it doesn't ask automatically when creating add routing,
+                    use this command: ng new angularAppName --routing
+                - When Created it looks similar but with these files added:
+                    - to package.json:
+                        - added to dependency:
+                            "@angular/router": version number
+                    - app.module.ts:
+                        - Include at top:
+                            import { AppRoutingModule } from './app-routing.module';
+                        - included this imports:
+                            @NgModule({
+                                imports[AppRoutingModule]
+                    - Created file:
+                        app.routing.module.ts:
+                            - Replace these:
+                                - import { Routes, RouterModule } from '@angular/router';
+                                - const routes: Routes = []; replace it with 
+                            - With:
+                                - import { Route, RouterModule } from '@angular/router';
+                                - const routes: Route[] = [
+                                        // will be an array of objects
+                                        {path: 'view1', component: component1}.
+                                        {path: 'view2', component: component2}
+                                        {path: 'view3', component: component3}
+                                    ];
+                            - Then it will pass it to @NgModule({
+                                imports; [RouteModule.forRoot(routes)],
+                            })
+            - Creating Routes
+                - First create the components
+                - Then in the app-routing.module.ts, import the components  
+                    import { HomeComponent } from './home/home.component';
+                    import { SettingsComponent } from './settings/settings.component'; // added this for restfulGet component created
+                - Then map the components in the app-routing.module.ts:
+                    // Creating route
+                    const routes: Route[] = [
+                    // only need path and component to match one another
+                    {path: 'home', component: HomeComponent},
+                    {path: 'settings', component: SettingsComponent}
+                    ];
+                - Inside app.component.html, add this, it should already be there:
+                     <router-outlet></router-outlet>
+                     - When angular sees it, injects the contents of component loaded int router-outlet, renders it in the router-outlet
+                        component
 
+            - Route Redirects and Whildcards:
+                - Setup a default route, automatically direct to home
+                    - // only need path and component to match one another
+                      // give it full instead of prefix, so it will give wildcard and show error, and send compent created to give message
+                      {path: '', redirectTo: '/home', pathMatch: 'full'}, // this makes it the default route, automatically have home at end like localhost:4200/home
+                      {path: 'home', component: HomeComponent},
+                - Handle errors, show message, using wildcards, using a '**', 2 stars
+                    - Create a component to show error massage:
+                        - For example:
+                            - Name component: page-not-found, and go to the page-not-found-component.html
+                            - Give it a error message
 
-                
+            - Child Routes:
+                // left off at 30
+                    
+
 
 */
 /*
     - Notes For Project:
         - First Create link:
         - Then that link, links to page that displays 6 charts
+        - Possible Charts tuturorial found on youtube:
+            https://www.youtube.com/watch?v=RTzi5DS7On4
 */
