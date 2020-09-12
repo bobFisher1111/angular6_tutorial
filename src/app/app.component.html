@@ -1,4 +1,18 @@
+<h1>This will be for the Navigation for the routing:</h1>
+<h3>Click the links</h3>
+<a routerLink="home">Home</a>
+<br>
+<a routerLink="settings">Settings</a>
+<br>
+<!-- This uses the member variable to look up, placed inside the app.component.ts -->
+<a [routerLink]="contactRoute">Contact</a>
+<br>
+<h3>Looping Way to give links:</h3>
+<a *ngFor="let route of routes" [routerLink] = "route.url">{{route.linkName}}</a>
+
+
 <router-outlet></router-outlet>
+<hr>
 <h1>
     Turtle likes to dance
 </h1>

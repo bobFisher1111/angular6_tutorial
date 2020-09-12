@@ -12,6 +12,15 @@ export class AppComponent {
   title = 'Turtle Page';
   user: User;
 
+  // used for naviagation for routing for variable:
+  contactRoute = "settings/contact"
+
+  // dynamic way of looping through for links for naviagation for routing, preffered way:
+  routes = [
+    { linkName: 'Home', url: 'home'},
+    { linkName: 'settings', url: 'settings'},
+  ]
+
    // So when need an instance it passes it to svc and gives it to us
   constructor(private svc: ServiceOneService, private http: HttpClient){
     // Hard coded values:

@@ -500,7 +500,40 @@
                           },
                       ];
 
-            - 
+            - Naviagation for routes:
+                - Click on the link and swtich between routes:
+                - Use routerLink instead of href="", because href="" will re load page, routerLink does not, in single page application,
+                    we don't want to re load the page
+                - In the app.component.html, add links here:
+                    <a routerLink="home">Home</a>
+                    <br>
+                    <a routerLink="setting">Settings</a>
+                - Member variable way of doing it:
+                    - app.component.html:
+                        <!-- This uses the member variable to look up, placed inside the app.component.ts -->
+                        <a [routerLink]="contactRoute">Contact</a>
+                    - app.component.ts:
+                        export class AppComponent {
+                            // used for naviagation:
+                            contactRoute = "settings/contact"
+                        }
+                - Another way dynamically render using object: // Preffered way
+                    // loop through array, instead of doing hard coding
+                     - app.component.ts:
+                        export class AppComponent {
+                           routes = [
+                               { linkName: 'Home', url: 'home'},
+                               { linkName: 'settings', url: 'settings'},
+                           ]
+                        }
+                    - app.component.html:
+                        <a *ngFor="let route of routes" [routeLink] = "route.url">{{route.linkName}}</a>
+                - Can do samething for for child for setting dynamically with object, by moving changes above to above to 
+                    - settings.component.ts & settings.component.html
+
+            - Left off at last video
+
+
 
                     
 
