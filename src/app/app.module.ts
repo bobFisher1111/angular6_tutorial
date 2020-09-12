@@ -14,7 +14,9 @@ import { RestfulGetComponent } from './restful-get/restful-get.component'; // ad
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { SettingsComponent } from './settings/settings.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component'; 
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { SettingsProfileComponent } from './settings-profile/settings-profile.component';
+import { SettingsContactComponent } from './settings-contact/settings-contact.component'; 
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     RestfulGetComponent,
     HomeComponent,
     SettingsComponent,
-    PageNotFoundComponent 
+    PageNotFoundComponent,
+    SettingsProfileComponent,
+    SettingsContactComponent 
   ],
   imports: [
     BrowserModule,

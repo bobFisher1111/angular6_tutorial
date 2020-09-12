@@ -6,6 +6,8 @@
             - The view:
             - deploying production with ng build, creates dist and had issues with it working with http-server dist/project-one,
                 - http-server is npm package
+        - Things to learn for future beyond this intro course
+            - more on routing, with dependency injections
         
         - Intro:
             - Angular Technologies:
@@ -473,8 +475,33 @@
                             - Name component: page-not-found, and go to the page-not-found-component.html
                             - Give it a error message
 
-            - Child Routes:
-                // left off at 30
+            - Nested Routes/Child Routes:
+                - Will be using settings component created for this as the parent:
+                - This also can continue with nesting with like a tree just continue with next level down
+                - In the app.routing.moudles, under const routes: there is a property called children, add it to the settings
+                - This will create nested route/child route:
+                    - Created 2 children: profile & 
+                    - Should automatically import in the app.routing.module
+                - Need to add <router-outlet></router-outlet> to parent compoent.html, this case would be settings
+                - add this to the app.routing.module.ts:
+                    - // Creating route
+                      const routes: Route[] = [
+                          {
+                          path: 'settings', 
+                          component: SettingsComponent,
+                          children: [
+                              // remove '/' infront of profile so it will work or it would go directly to root, this makes profile default to settings
+                              {path: '', redirectTo: 'profile', pathMatch: 'full'},  
+                              {path: 'profile', component: SettingsProfileComponent},
+                              {path: 'contact', component: SettingsContactComponent},
+                              // incase user puts invalid url after settings for settings it will automatically redirect to profile
+                              {path: '**',redirectTo: 'profile', pathMatch: 'full'}
+                              ]
+                          },
+                      ];
+
+            - 
+
                     
 
 
