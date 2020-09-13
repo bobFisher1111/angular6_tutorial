@@ -531,7 +531,15 @@
                 - Can do samething for for child for setting dynamically with object, by moving changes above to above to 
                     - settings.component.ts & settings.component.html
 
-            - Left off at last video
+            - What Need next thing to learn:
+                - Deep Dive into Components:
+                - Testing:
+                   - Jasmin, protractor
+                   - command: ng test
+                - Deep Dive into Routing:
+                - RxJS
+                - State management (ngRx)
+
 
 
 
